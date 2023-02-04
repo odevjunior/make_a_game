@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  app:
+    image: make-a-game:latest
+    ports:
+      - "8080:3000"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      - DATABASE_URL: postgresql://jaijuni:jjbatera4@db:9000/make_a_game
+  db:
+    image: postgres:15.1-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: jjbatera4
+      POSTGRES_USER: jaijuni
+      POSTGRES_DB: make_a_game
+    expose: 
+      - 9000
+    ports:
+      - 9000:5432
+    volumes:
+    - ./backups:/documents/backups
+    command: -p 9000
+volumes:
+  db:
+    driver: local

@@ -1,0 +1,22 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "4.9.0",
+    "prisma": "^4.9.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "build": "yarn tsc",
+    "start": "yarn tsc ./src/index.ts",
+    "dev": "npx nodemon ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18"
+  }
+}
